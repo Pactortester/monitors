@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: monitors
-Version: 1.0.0
+Version: 1.0.1
 Summary: grabbing buried points
 Home-page: https://github.com/Pactortester/monitors
 Author: lijiawei
@@ -40,8 +40,9 @@ Description: # monitors
         ## 适用场景
         
         
-        1. 监控某一个进程的性能
+        1. 监控某一个进程的性能,默认监控一天，数据每隔3秒刷新一次
         2. 根据子进程名称获取到父进程的id,进行性能监控。
+        3. 适用于各个平台（Windows, Mac, Linux）
         - 例如：想监控整个chrome浏览器的系统资源消耗情况
         - 只需要传入[chrome.exe] 系统将自动为你监控整个chrome浏览器的资源消耗情况。
         ## 

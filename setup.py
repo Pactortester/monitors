@@ -7,7 +7,7 @@ with open('README.md', encoding='utf-8') as f:
 
 setup(
     name="monitors",
-    version="1.0.0",
+    version="1.0.1",
     keywords=["pip", "monitors", "process monitor", "system monitor"],
     description="grabbing buried points",
     long_description=long_description,

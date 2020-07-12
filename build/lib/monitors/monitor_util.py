@@ -4,7 +4,7 @@ import os
 import datetime
 import time
 import psutil
-
+from monitors.monitor_set import Settings as ST
 from monitors.monitor_pid import get_process_id
 
 
@@ -16,7 +16,7 @@ def monitor(process_id):
     """
 
     try:
-        CYCLE_TIME = datetime.timedelta(weeks=0, days=1, hours=00, minutes=0, seconds=5, microseconds=0,
+        CYCLE_TIME = datetime.timedelta(weeks=0, days=ST.monitor_duration, hours=00, minutes=0, seconds=5, microseconds=0,
                                         milliseconds=0)
         start_time = datetime.datetime.today()
         title = '时间' + "\t			  " + '运行状态' + "\t" + 'CPU百分比' + " " + '内存利用率' + "\t" + '虚拟内存' + "\t" + '实际使用内存' + "\t" + '网络发送包' + " " + '网络接受包' + "\n"
@@ -26,14 +26,13 @@ def monitor(process_id):
             pName = p.name()
             logName = pName + "_" + str(process_id) + "_stress_monitoring_record.log"
             print(logName + '\n')
-            path = '../monitor_log'
-            if not os.path.exists(path):
-                os.mkdir(path)
-            logfile = open(path + '\\' + logName, "a")
+            if not os.path.exists(ST.monitor_log_path):
+                os.mkdir(ST.monitor_log_path)
+            logfile = open(ST.monitor_log_path + '\\' + logName, "a")
         else:
             print("pid is not exists please enter true pid!!!")
             return
-        wTime = 1
+        wTime = ST.refresh_interval
         
         while True:
             if datetime.datetime.today() - start_time > CYCLE_TIME:
