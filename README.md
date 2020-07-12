@@ -65,3 +65,8 @@ from monitors.monitor_util import monitor_start
 
 monitor_start(name='chrome.exe')
 ```
+## 
+
+以上便是 monitors 的基本用法介绍。
+
+如果您有发现错误，或者您对 monitors 有任何建议，欢迎到 [monitors Issues](https://github.com/Pactortester/monitors/issues) 发表，非常感谢您的支持。您的反馈和建议非常宝贵，希望您的参与能帮助 monitors 做得更好。
